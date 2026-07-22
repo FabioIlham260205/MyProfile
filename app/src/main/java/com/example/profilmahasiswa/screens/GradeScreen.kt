@@ -1,6 +1,7 @@
 package com.example.profilmahasiswa.screens
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -19,6 +20,8 @@ data class GradeInfo(val subject: String, val score: String, val grade: String)
 
 @Composable
 fun GradeScreen(paddingValues: PaddingValues) {
+    val isDarkMode = isSystemInDarkTheme() || true // Defaulting for consistency with requested design
+    
     val grades = listOf(
         GradeInfo("Pemrograman Perangkat Bergerak", "90", "A"),
         GradeInfo("Basis Data", "85", "A-"),
@@ -30,7 +33,7 @@ fun GradeScreen(paddingValues: PaddingValues) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(ColorBackground)
+            .background(if (isDarkMode) ColorBackground else MaterialTheme.colorScheme.background)
             .padding(paddingValues)
             .padding(24.dp)
     ) {
@@ -38,45 +41,42 @@ fun GradeScreen(paddingValues: PaddingValues) {
             text = "Data Nilai Mahasiswa",
             fontSize = 24.sp,
             fontWeight = FontWeight.Bold,
-            color = Color.White
+            color = if (isDarkMode) Color.White else Color.Black
         )
         
         Spacer(modifier = Modifier.height(20.dp))
 
-        // BOX - Header Informasi Mahasiswa (Semester di tengah)
+        // BOX - Header Informasi Mahasiswa
         Box(
             modifier = Modifier
                 .fillMaxWidth()
                 .clip(RoundedCornerShape(12.dp))
-                .background(ColorCardBackground)
+                .background(if (isDarkMode) ColorCardBackground else MaterialTheme.colorScheme.surfaceVariant)
                 .padding(16.dp)
         ) {
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                // NAMA (Kiri)
                 Column(modifier = Modifier.weight(1f)) {
                     Text("Nama", fontSize = 12.sp, color = Color.Gray)
-                    Text("Fabio Ilham M", fontWeight = FontWeight.Bold, color = Color.White)
+                    Text("Fabio Ilham M", fontWeight = FontWeight.Bold, color = if (isDarkMode) Color.White else Color.Black)
                 }
                 
-                // SEMESTER (Tengah)
                 Column(
                     modifier = Modifier.weight(1f),
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Text("Semester", fontSize = 12.sp, color = Color.Gray)
-                    Text("6", fontWeight = FontWeight.Bold, color = Color.White)
+                    Text("6", fontWeight = FontWeight.Bold, color = if (isDarkMode) Color.White else Color.Black)
                 }
                 
-                // NIM (Kanan)
                 Column(
                     modifier = Modifier.weight(1f),
                     horizontalAlignment = Alignment.End
                 ) {
                     Text("NIM", fontSize = 12.sp, color = Color.Gray)
-                    Text("23083000111", fontWeight = FontWeight.Bold, color = Color.White)
+                    Text("23083000111", fontWeight = FontWeight.Bold, color = if (isDarkMode) Color.White else Color.Black)
                 }
             }
         }
@@ -106,7 +106,7 @@ fun GradeScreen(paddingValues: PaddingValues) {
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             items(grades) { grade ->
-                GradeItem(grade)
+                GradeItem(grade, isDarkMode)
             }
         }
 
@@ -115,7 +115,7 @@ fun GradeScreen(paddingValues: PaddingValues) {
         // BOX - Ringkasan IPK
         Card(
             modifier = Modifier.fillMaxWidth(),
-            colors = CardDefaults.cardColors(containerColor = Color(0xFF003D6D)),
+            colors = CardDefaults.cardColors(containerColor = if (isDarkMode) Color(0xFF003D6D) else MaterialTheme.colorScheme.primaryContainer),
             shape = RoundedCornerShape(16.dp)
         ) {
             Row(
@@ -127,13 +127,13 @@ fun GradeScreen(paddingValues: PaddingValues) {
             ) {
                 Text(
                     text = "Indeks Prestasi Kumulatif (IPK)",
-                    color = Color.White,
+                    color = if (isDarkMode) Color.White else MaterialTheme.colorScheme.onPrimaryContainer,
                     fontWeight = FontWeight.Medium,
                     fontSize = 14.sp
                 )
                 Text(
                     text = "4.00",
-                    color = ColorAccentBlue,
+                    color = if (isDarkMode) ColorAccentBlue else MaterialTheme.colorScheme.primary,
                     fontWeight = FontWeight.Bold,
                     fontSize = 24.sp
                 )
@@ -143,9 +143,9 @@ fun GradeScreen(paddingValues: PaddingValues) {
 }
 
 @Composable
-fun GradeItem(grade: GradeInfo) {
+fun GradeItem(grade: GradeInfo, isDarkMode: Boolean) {
     Card(
-        colors = CardDefaults.cardColors(containerColor = ColorCardBackground),
+        colors = CardDefaults.cardColors(containerColor = if (isDarkMode) ColorCardBackground else MaterialTheme.colorScheme.surfaceVariant),
         shape = RoundedCornerShape(12.dp)
     ) {
         Row(
@@ -157,13 +157,13 @@ fun GradeItem(grade: GradeInfo) {
             Text(
                 text = grade.subject,
                 modifier = Modifier.weight(1f),
-                color = Color.White,
+                color = if (isDarkMode) Color.White else Color.Black,
                 fontSize = 14.sp
             )
             Text(
                 text = grade.score,
                 modifier = Modifier.width(60.dp),
-                color = ColorAccentBlue,
+                color = if (isDarkMode) ColorAccentBlue else MaterialTheme.colorScheme.primary,
                 fontWeight = FontWeight.Bold,
                 fontSize = 14.sp
             )
@@ -171,12 +171,12 @@ fun GradeItem(grade: GradeInfo) {
                 modifier = Modifier
                     .width(40.dp)
                     .clip(RoundedCornerShape(8.dp))
-                    .background(Color(0xFF003D6D)),
+                    .background(if (isDarkMode) Color(0xFF003D6D) else MaterialTheme.colorScheme.primaryContainer),
                 contentAlignment = Alignment.Center
             ) {
                 Text(
                     text = grade.grade,
-                    color = ColorAccentBlue,
+                    color = if (isDarkMode) ColorAccentBlue else MaterialTheme.colorScheme.primary,
                     fontSize = 12.sp,
                     fontWeight = FontWeight.Bold,
                     modifier = Modifier.padding(vertical = 4.dp)

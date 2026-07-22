@@ -25,13 +25,15 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             var selectedTab by remember { mutableIntStateOf(0) }
+            // State untuk Dark Mode Toggle
+            var isDarkMode by remember { mutableStateOf(true) }
 
-            ProfilMahasiswaTheme(darkTheme = true) {
+            ProfilMahasiswaTheme(darkTheme = isDarkMode) {
                 Scaffold(
                     bottomBar = {
                         NavigationBar(
-                            containerColor = Color(0xFF1C2128),
-                            contentColor = Color(0xFF9FCAFF)
+                            containerColor = if (isDarkMode) Color(0xFF1C2128) else Color(0xFFABC9EF),
+                            contentColor = if (isDarkMode) Color(0xFF9FCAFF) else Color(0xFF1A3D5D)
                         ) {
                             NavigationBarItem(
                                 selected = selectedTab == 0,
@@ -39,11 +41,11 @@ class MainActivity : ComponentActivity() {
                                 icon = { Icon(Icons.Default.AccountCircle, contentDescription = "Profil", modifier = Modifier.size(24.dp)) },
                                 label = { Text("Profil") },
                                 colors = NavigationBarItemDefaults.colors(
-                                    selectedIconColor = Color(0xFF9FCAFF),
+                                    selectedIconColor = if (isDarkMode) Color(0xFF9FCAFF) else Color(0xFF1A3D5D),
                                     unselectedIconColor = Color.Gray,
-                                    selectedTextColor = Color(0xFF9FCAFF),
+                                    selectedTextColor = if (isDarkMode) Color(0xFF9FCAFF) else Color(0xFF1A3D5D),
                                     unselectedTextColor = Color.Gray,
-                                    indicatorColor = Color(0xFF003D6D)
+                                    indicatorColor = if (isDarkMode) Color(0xFF003D6D) else Color(0xFFDEE6F0)
                                 )
                             )
                             NavigationBarItem(
@@ -52,18 +54,23 @@ class MainActivity : ComponentActivity() {
                                 icon = { Icon(Icons.Default.ListAlt, contentDescription = "Data Nilai", modifier = Modifier.size(24.dp)) },
                                 label = { Text("Nilai") },
                                 colors = NavigationBarItemDefaults.colors(
-                                    selectedIconColor = Color(0xFF9FCAFF),
+                                    selectedIconColor = if (isDarkMode) Color(0xFF9FCAFF) else Color(0xFF1A3D5D),
                                     unselectedIconColor = Color.Gray,
-                                    selectedTextColor = Color(0xFF9FCAFF),
+                                    selectedTextColor = if (isDarkMode) Color(0xFF9FCAFF) else Color(0xFF1A3D5D),
                                     unselectedTextColor = Color.Gray,
-                                    indicatorColor = Color(0xFF003D6D)
+                                    indicatorColor = if (isDarkMode) Color(0xFF003D6D) else Color(0xFFDEE6F0)
                                 )
                             )
                         }
                     }
                 ) { innerPadding ->
                     when (selectedTab) {
-                        0 -> ProfileEditScreen(innerPadding, onNavigateToGrades = { selectedTab = 1 })
+                        0 -> ProfileEditScreen(
+                            paddingValues = innerPadding,
+                            onNavigateToGrades = { selectedTab = 1 },
+                            isDarkMode = isDarkMode,
+                            onThemeToggle = { isDarkMode = it }
+                        )
                         1 -> GradeScreen(innerPadding)
                     }
                 }
