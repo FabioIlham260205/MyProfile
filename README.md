@@ -17,11 +17,11 @@ NIM :23083000111
 </p>
 
 
- Screen 1 Tampilan Profile kita
-  Screen 2 Edit Email,Telepon,Alamat
- Screen 3 StatistiK,Eit Profile,Data Nilai Mahasiswa,Share Profile
- Screen 4 Profile Tapi DarkMode
-  Screen 6 Data Nilai Mahasiswa
+ 1. Screen 1 Tampilan Profile kita
+2. Screen 2 Edit Email,Telepon,Alamat
+3. Screen 3 StatistiK,Eit Profile,Data Nilai Mahasiswa,Share Profile
+4. Screen 4 Profile Tapi DarkMode
+6. Screen 6 Data Nilai Mahasiswa
 ---
 
 ## 🎯 Tujuan Pembelajaran
