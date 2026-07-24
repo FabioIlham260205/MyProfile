@@ -12,7 +12,7 @@ NIM :23083000111
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/52c44dd1-581c-4986-91df-b57c9f926692" width="220">
-  <img src="https://github.com/user-attachments/assets/cb440c4a-7b63-4980-a77b-209bdd73a1bf" width="220">
+  <img src="https://github.com/user-attachments/assets/ddb5f606-7fb0-4c90-a205-9df0121e1e4d" width="220">
   <img src="https://github.com/user-attachments/assets/b6634585-5f56-4ccf-863c-045d81da68bf" width="220">
 </p>
 
@@ -21,6 +21,7 @@ NIM :23083000111
 2. Screen 2 Edit Email,Telepon,Alamat
 3. Screen 3 StatistiK,Eit Profile,Data Nilai Mahasiswa,Share Profile
 4. Screen 4 Profile Tapi DarkMode
+5. Screen 5 Menginput gambar dari galeri supaya ada gambarnya
 6. Screen 6 Data Nilai Mahasiswa
 ---
 
