@@ -1,5 +1,20 @@
 # 📱 Week 2 - Jetpack Compose Fundamentals
 ## Praktikum: Aplikasi Profil Mahasiswa
+NAMA : FABIO ILHAM MUHAMMAD
+NIM :23083000111
+
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/xxx1" width="250">
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/xxx2" width="250">
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/xxx3" width="250">
+</p>
 
 ---
 
