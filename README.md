@@ -5,29 +5,16 @@ NIM :23083000111
 
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/fa69c883-149a-43b8-ad6f-46a6c32f0ec3" width="250" alt="Screenshot 1">
+  <img src="https://github.com/user-attachments/assets/fa69c883-149a-43b8-ad6f-46a6c32f0ec3" width="220">
+  <img src="https://github.com/user-attachments/assets/e15828e1-87ce-4598-b381-c70016a61ded" width="220">
+  <img src="https://github.com/user-attachments/assets/2953a9b1-ab4c-4f0e-8726-da62359dfd16" width="220">
 </p>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/e15828e1-87ce-4598-b381-c70016a61ded" width="250" alt="Screenshot 2">
+  <img src="https://github.com/user-attachments/assets/52c44dd1-581c-4986-91df-b57c9f926692" width="220">
+  <img src="https://github.com/user-attachments/assets/cb440c4a-7b63-4980-a77b-209bdd73a1bf" width="220">
+  <img src="https://github.com/user-attachments/assets/b6634585-5f56-4ccf-863c-045d81da68bf" width="220">
 </p>
-
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/2953a9b1-ab4c-4f0e-8726-da62359dfd16" width="250" alt="Screenshot 3">
-</p>
-
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/52c44dd1-581c-4986-91df-b57c9f926692" width="250" alt="Screenshot 4">
-</p>
-
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/cb440c4a-7b63-4980-a77b-209bdd73a1bf" width="250" alt="Screenshot 5">
-</p>
-
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/b6634585-5f56-4ccf-863c-045d81da68bf" width="250" alt="Screenshot 6">
-</p>
-
 
 
 
